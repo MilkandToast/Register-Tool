@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Attendance grid</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/register.css" />
+  </head>
+  <body>
+    <div class="app-shell wide">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">✓</span>
+          <span>Register</span>
+        </div>
+        <a class="secondary-btn small-btn" href="./admin.html">&larr; Back to admin</a>
+      </header>
+
+      <main>
+        <section class="card">
+          <div class="title-row">
+            <div>
+              <h1>Attendance register</h1>
+              <p class="subtitle">Learners down the side, days across. Click a pill to change it.</p>
+            </div>
+            <div class="inline-row">
+              <button id="refresh-btn" class="secondary-btn small-btn" type="button">Refresh</button>
+              <button id="print-btn" class="secondary-btn small-btn" type="button">Print</button>
+              <button id="csv-btn" class="primary-btn small-btn" type="button">Download CSV</button>
+            </div>
+          </div>
+
+          <p id="print-title" class="print-only"></p>
+
+          <div id="class-tabs" class="class-tabs"></div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="r-from">From</label>
+              <input id="r-from" class="input" type="date" />
+            </div>
+            <div class="field">
+              <label for="r-to">To</label>
+              <input id="r-to" class="input" type="date" />
+            </div>
+          </div>
+
+          <div class="legend">
+            <span><i class="legend-dot status-present"></i> P = Present</span>
+            <span><i class="legend-dot status-late"></i> L = Late</span>
+            <span><i class="legend-dot status-absent"></i> A = Absent</span>
+            <span>Number under each day = attended (present + late) out of total</span>
+          </div>
+
+          <div id="register-message"></div>
+          <div id="register-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./js/pages/register.js"></script>
+  </body>
+</html>

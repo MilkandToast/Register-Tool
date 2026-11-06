@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Check in</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">✓</span>
+          <span>Register</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="card narrow-card">
+          <div class="title-row">
+            <div>
+              <h1>Check in</h1>
+              <p class="subtitle">Enter today's class code and your details.</p>
+            </div>
+          </div>
+
+          <form id="checkin-form" class="form-grid" novalidate>
+            <div class="field">
+              <label for="code">Class code</label>
+              <input
+                id="code"
+                class="input code-input"
+                type="text"
+                maxlength="12"
+                placeholder="e.g. K7M2QX"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+              />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="first-name">First name</label>
+                <input id="first-name" class="input" type="text" autocomplete="off" autocapitalize="words" />
+              </div>
+              <div class="field">
+                <label for="last-name">Surname</label>
+                <input id="last-name" class="input" type="text" autocomplete="off" autocapitalize="words" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="employee-number">Employee number</label>
+              <input id="employee-number" class="input" type="text" autocomplete="off" />
+            </div>
+
+            <button id="checkin-btn" class="primary-btn full" type="submit">Check in</button>
+            <div id="checkin-message" aria-live="polite"></div>
+          </form>
+
+          <div id="checkin-result" class="result-panel" aria-live="polite" hidden></div>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <a href="./admin.html">Admin sign in</a>
+      </footer>
+    </div>
+
+    <script type="module" src="./js/pages/checkin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.narrow-card {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.title-row h1,
+.title-row h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+/* ---------- Forms ---------- */
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.input,
+.select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.8rem 0.9rem;
+  color: var(--ink);
+  font-size: 16px; /* stops iPhones zooming in when typing */
+}
+
+.input:focus,
+.select:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.code-input {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ---------- Buttons ---------- */
+.primary-btn,
+.secondary-btn,
+.ghost-btn,
+.danger-btn {
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: var(--brand-strong);
+}
+
+.secondary-btn {
+  background: var(--surface-strong);
+  color: var(--ink);
+}
+
+.ghost-btn {
+  background: transparent;
+  color: var(--ink);
+}
+
+.danger-btn {
+  background: rgba(191, 78, 67, 0.06);
+  border-color: rgba(191, 78, 67, 0.35);
+  color: var(--danger);
+}
+
+.small-btn {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8rem;
+}
+
+.full {
+  width: 100%;
+  min-height: 50px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Messages ---------- */
+.alert {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.alert.success {
+  background: rgba(43, 138, 93, 0.1);
+  color: var(--success);
+}
+
+.alert.error {
+  background: rgba(191, 78, 67, 0.08);
+  color: var(--danger);
+}
+
+/* ---------- Status pills and badges ---------- */
+.status-pill,
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-pill {
+  min-width: 84px;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.72rem;
+}
+
+.badge {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.75rem;
+}
+
+.status-present,
+.badge-success {
+  background: rgba(43, 138, 93, 0.12);
+  color: var(--success);
+}
+
+.status-late,
+.badge-warning {
+  background: rgba(208, 138, 43, 0.14);
+  color: var(--warning);
+}
+
+.status-absent {
+  background: rgba(191, 78, 67, 0.1);
+  color: var(--danger);
+}
+
+.badge-neutral {
+  background: rgba(148, 163, 184, 0.12);
+  color: #475569;
+}
+
+/* ---------- Empty states and tables ---------- */
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  color: var(--muted);
+  text-align: center;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+/* ---------- Check-in result ---------- */
+.result-panel {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.result-panel h2 {
+  margin: 4px 0 0;
+}
+
+.result-panel p {
+  margin: 0;
+}
+
+.result-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.result-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--success);
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 10px 24px rgba(43, 138, 93, 0.3);
+}
+
+.result-icon.late {
+  background: var(--warning);
+  box-shadow: 0 10px 24px rgba(208, 138, 43, 0.3);
+}
+
+.result-panel .secondary-btn {
+  margin-top: 10px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 520px) {
+  .card {
+    padding: 18px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}

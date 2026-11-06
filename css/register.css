@@ -1,0 +1,301 @@
+.app-shell.wide {
+  max-width: 1400px;
+}
+
+/* ---------- Class tabs ---------- */
+.class-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.class-tab {
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.class-tab.is-active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.filter-row .field {
+  min-width: 150px;
+}
+
+.inline-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+a.secondary-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- Legend ---------- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.status-present {
+  background: var(--success);
+}
+
+.legend-dot.status-late {
+  background: var(--warning);
+}
+
+.legend-dot.status-absent {
+  background: var(--danger);
+}
+
+/* ---------- The grid ---------- */
+.grid-scroll {
+  overflow: auto;
+  max-height: 70vh;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-strong);
+}
+
+.register-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+}
+
+.register-table th,
+.register-table td {
+  padding: 10px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+.register-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f3f6f4;
+}
+
+/* First column stays visible when you scroll sideways */
+.register-table .learner-col {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 190px;
+  text-align: left;
+  border-right: 1px solid var(--line);
+}
+
+.register-table thead .learner-col {
+  z-index: 3;
+  background: #f3f6f4;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.learner-col strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.learner-col span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.day-col {
+  min-width: 68px;
+}
+
+.day-name {
+  display: block;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.day-date {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.day-count {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.cell-empty {
+  color: var(--muted);
+}
+
+/* ---------- P / L / A pills ---------- */
+.pill {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.pill:hover {
+  transform: scale(1.15);
+}
+
+.pill-present {
+  background: rgba(43, 138, 93, 0.14);
+  color: var(--success);
+}
+
+.pill-late {
+  background: rgba(208, 138, 43, 0.16);
+  color: var(--warning);
+}
+
+.pill-absent {
+  background: rgba(191, 78, 67, 0.12);
+  color: var(--danger);
+}
+
+/* ---------- Click menu ---------- */
+.cell-menu {
+  position: absolute;
+  z-index: 50;
+  min-width: 150px;
+  display: grid;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--ink);
+}
+
+.menu-item:hover,
+.menu-item.is-current {
+  background: var(--surface-soft);
+}
+
+.menu-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.menu-dot.status-present {
+  background: var(--success);
+}
+
+.menu-dot.status-late {
+  background: var(--warning);
+}
+
+.menu-dot.status-absent {
+  background: var(--danger);
+}
+
+/* ---------- Printing ---------- */
+.print-only {
+  display: none;
+}
+
+@media print {
+  .topbar,
+  .filter-row,
+  .class-tabs,
+  .title-row .inline-row,
+  .legend {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .grid-scroll {
+    max-height: none;
+    overflow: visible;
+    border: none;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+  .register-table .learner-col {
+    min-width: 140px;
+  }
+}
